@@ -42,23 +42,23 @@ class Mascota extends Animal {
 const formularioAnimales = document.getElementById("formulario")
 
 formularioAnimales.addEventListener("submit", (event)=> {
-    event.preventDefault()// previene el ingreso de cualquier info errónea
+    event.preventDefault()
 
-    //ingreso por medio de generación de constantes y .value d ela info ingresada por el usuario
-    const dueñoValue = document.getElementById("propietario").value;
+    
+const dueñoValue = document.getElementById("propietario").value;
 const telefonoValue = document.getElementById("telefono").value;
 const residenciaValue = document.getElementById("direccion").value;
 const nombreMascotaValue = document.getElementById("nombreMascota").value;
 const tipoMascotaValue = document.getElementById("tipo").value;
 const consultaValue = document.getElementById("enfermedad").value;
 
-////iteración de las constantes 
+//iteración de las constantes 
 const registroMascota = new Mascota(dueñoValue,telefonoValue, residenciaValue, tipoMascotaValue, nombreMascotaValue )
 
 console.log(registroMascota.datosPropietario())
-//obtiene la info final del form
+
 const resultado = document.getElementById("resultado");
-//.textContent para que se vea la info del form en el DOM
+
 resultado.textContent = `${registroMascota.datosPropietario()}. Acudió a la consulta con su ${tipoMascotaValue} de nombre ${nombreMascotaValue} y vino a la consulta por el motivo de: ${consultaValue} `
 
 
